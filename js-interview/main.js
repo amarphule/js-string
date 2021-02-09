@@ -50,10 +50,46 @@ function reverseString(str) {
 
 function isPalindrome(str) {
 
-    let revStr = str.split('').reverse().join('');
-
-    return (revStr === str)
+    // let revStr = str.split('').reverse().join('');
+    // return (revStr === str)
 }
 
+///////////////////////////////////////////////
 
-console.log(isPalindrome("racecar"))
+// CHALLENGE 3: REVERSE AN INTEGER
+// Return reverse integer
+/// ex. reveerseInt(521) === 125
+
+function reverseInt(int) {
+    // let revInt = "" + int; or
+    // let revInt = int.toString()
+    // let reverse = revInt.split('').reverse().join('')
+    // return parseInt(reverse) * Math.sign(int)
+}
+
+///////////////////////////////////////////////////
+
+// CHAALLENGE 4: CAPITALIZE LETTERS
+// Return a string with the first letter of every word is capitalized
+// ex. capitalizeLetter('i love javascript') === 'I Love Javascript'
+
+function capitalizeLetter(str) {
+    //Using for loop
+    // let splitStr = str.toLowerCase().split(' ')
+    // for (let i = 0; i < splitStr.length; i++) {
+    //     splitStr[i] = splitStr[i].substring(0, 1).toUpperCase() + splitStr[i].substring(1);
+    // }
+    // return splitStr.join(' ')
+
+    ////////////////////////////////////////////
+
+    //using Map
+
+    return str
+        .toLowerCase()
+        .split(' ')
+        .map((word) => word[0].toUpperCase() + word.substr(1))
+        .join(' ')
+}
+
+console.log(capitalizeLetter('i love javascript'))
