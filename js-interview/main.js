@@ -98,27 +98,50 @@ function capitalizeLetter(str) {
 //ex. maxCharacter('javascript') === a
 
 function maxCharacter(str) {
-    let charMap = {};
-    let maxNum = 0;
-    let maxChar = '';
+    // let charMap = {};
+    // let maxNum = 0;
+    // let maxChar = '';
 
-    str.split('').forEach(
-        function (char) {
-            if (charMap[char]) {
-                charMap[char]++;
-            } else {
-                charMap[char] = 1;
-            }
-        }
-    )
-    for (let char in charMap) {
-        if (charMap[char] > maxNum) {
-            maxNum = charMap[char];
-            maxChar = char;
-        }
-    }
+    // str.split('').forEach(
+    //     function (char) {
+    //         if (charMap[char]) {
+    //             charMap[char]++;
+    //         } else {
+    //             charMap[char] = 1;
+    //         }
+    //     }
+    // )
+    // for (let char in charMap) {
+    //     if (charMap[char] > maxNum) {
+    //         maxNum = charMap[char];
+    //         maxChar = char;
+    //     }
+    // }
 
-    return maxChar + ": " + maxNum;
+    // return maxChar + ": " + maxNum;
 }
 
-console.log(maxCharacter('javascript'))
+//////////////////////////////////////////////
+
+//CHALLENGE 6: FIZZBUZZ
+// Write a function that prints all the number from 1 to 100.
+// For multiple of 3 instead of number print 'Fizz', for 
+// multiple of 5 instead of number print 'Buzz', For numbers
+// which are multiple of both 3 and 5  print 'FizzBuzz'
+
+function fizzBuzz() {
+    for (let i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log('FizzBuzz')
+        } else if (i % 3 === 0) {
+            console.log('Fizz')
+        } else if (i % 5 === 0) {
+            console.log('Buzz')
+        } else {
+            console.log(i)
+        }
+    }
+}
+
+
+fizzBuzz();
