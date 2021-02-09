@@ -6,7 +6,7 @@ function reverseString(str) {
     // Using inbuild methods
     // return str.split('').reverse().join('')
 
-    //////////////////////////////////////////
+    ////////////////////////////////
 
     // using for loop decrement
     // let revStr = '';
@@ -15,7 +15,7 @@ function reverseString(str) {
     // }
     // return revStr;
 
-    /////////////////////////////////////////////
+    ////////////////////////////////
 
     // using for loop dincrement
     // let revStr = '';
@@ -24,7 +24,7 @@ function reverseString(str) {
     // }
     // return revStr;
 
-    /////////////////////////////////////////////
+    /////////////////////////////////
 
     // Using for of loop
     // let revStr = '';
@@ -33,16 +33,16 @@ function reverseString(str) {
     // }
     // return revStr
 
-    /////////////////////////////////////////////
+    /////////////////////////////////
 
     // Using for Each loop
     // let revStr = '';
     // str.split('').forEach((char) => revStr = char + revStr)
     // return revStr
 
-    ///////////////////////////////////////////
 }
 
+///////////////////////////////////////////////
 
 // CHALANGE 2 : VALIDATE PALINDROME
 // Return true if Palindrome and false if not
@@ -81,15 +81,44 @@ function capitalizeLetter(str) {
     // }
     // return splitStr.join(' ')
 
-    ////////////////////////////////////////////
+    /////////////////////////////////
 
     //using Map
-
-    return str
-        .toLowerCase()
-        .split(' ')
-        .map((word) => word[0].toUpperCase() + word.substr(1))
-        .join(' ')
+    // return str
+    //     .toLowerCase()
+    //     .split(' ')
+    //     .map((word) => word[0].toUpperCase() + word.substr(1))
+    //     .join(' ')
 }
 
-console.log(capitalizeLetter('i love javascript'))
+/////////////////////////////////////////////////
+
+//CHALLENGE 5: MAX CHARACTER
+//Return a character that is most common in string
+//ex. maxCharacter('javascript') === a
+
+function maxCharacter(str) {
+    let charMap = {};
+    let maxNum = 0;
+    let maxChar = '';
+
+    str.split('').forEach(
+        function (char) {
+            if (charMap[char]) {
+                charMap[char]++;
+            } else {
+                charMap[char] = 1;
+            }
+        }
+    )
+    for (let char in charMap) {
+        if (charMap[char] > maxNum) {
+            maxNum = charMap[char];
+            maxChar = char;
+        }
+    }
+
+    return maxChar + ": " + maxNum;
+}
+
+console.log(maxCharacter('javascript'))
